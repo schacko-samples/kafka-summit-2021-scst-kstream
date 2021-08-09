@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>kafka.summit.scst.kafka.streams</groupId>
+	<artifactId>kafka-summit-scst-kafka-streams</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>kafka-summit-scst-kafka-streams</name>
+	<description>Stand alone demo used for Kafka Summit 2021 SCSt-Kafka Streams talk</description>
+
+	<modules>
+		<module>user-clicks-per-region</module>
+		<module>user-clicks-region-producer</module>
+	</modules>
+
+</project>
