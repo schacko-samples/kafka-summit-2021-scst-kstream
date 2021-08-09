@@ -1,4 +1,6 @@
-== What is this app?
+== Spring Cloud Stream and Kafka Streams
+
+This is the demo repository for the Kafka Summit 2021 talk: Event Streaming with Kafka Streams and Spring Cloud Stream
 
 This is an example of a Spring Cloud Stream processor using Kafka Streams support that shows both KStream and KTable bindings.
 
