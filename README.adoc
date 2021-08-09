@@ -2,7 +2,12 @@
 
 This is an example of a Spring Cloud Stream processor using Kafka Streams support that shows both KStream and KTable bindings.
 
-It uses java.util.function.BiFunction to demonstrate two inputs and an output.
+Following are the two applications in this repository
+
+* Spring Cloud Stream based Kafka Streams processor
+* Spring Cloud Stream producer application to generate data for the processor
+
+Kafka Streams processor uses java.util.function.BiFunction to demonstrate two inputs and an output.
 The processor consumes user region data as `KTable` and then user clicks information as `KStream`.
 Then it produces the clicks per region info on the outbound.
 The same outbound information is stored in a state store as well to demonstrate interactive query capabilities of Kafka Streams exposed as `IteractiveQueryService` in Spring Cloud Stream.
