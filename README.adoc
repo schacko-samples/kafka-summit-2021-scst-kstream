@@ -78,23 +78,13 @@ Or
 docker exec -it s1p-kafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic error.user-clicks.user-clicks-per-region --property print.key=true --property key.separator="-"
 ```
 
-### Visualize Kafka Streams topology
-
-```
-curl localhost:8080/actuator/kafkastreamstopology | jq .
-curl localhost:8080/actuator/kafkastreamstopology/clicks-applicationId | jq .
-curl localhost:8080/actuator/kafkastreamstopology/updates-applicationId | jq .
-```
-
-Popular UI tool for visualizing the topology: https://zz85.github.io/kafka-streams-viz/
-
 ### Accessing binder health endpoint
 
 ```
 curl localhost:8080/actuator/health | jq .
 ```
 
-### Accssing Kafka Streams metrics
+### Accessing Kafka Streams metrics
 
 ```
 curl localhost:8080/actuator/metrics | jq .
@@ -105,6 +95,16 @@ curl localhost:8080/actuator/metrics | jq .
 ```
 curl localhost:8080/actuator/metrics/kafka.stream.thread.commit.total | jq .
 ```
+
+### Visualize Kafka Streams topology
+
+```
+curl localhost:8080/actuator/kafkastreamstopology | jq .
+curl localhost:8080/actuator/kafkastreamstopology/clicks-applicationId
+curl localhost:8080/actuator/kafkastreamstopology/updates-applicationId
+```
+
+Popular UI tool for visualizing the topology: https://zz85.github.io/kafka-streams-viz/
 
 ### Accessing all the bindings
 

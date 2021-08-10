@@ -42,7 +42,6 @@ public class UserClicksPerRegionApplication {
 
 	@Bean
 	public BiFunction<KStream<String, Long>, KTable<String, String>, KStream<String, Long>> clicks() {
-
 		return (userClicksStream, userRegionsTable) -> (userClicksStream
 				.leftJoin(userRegionsTable, (clicks, region) -> new RegionWithClicks(region == null ?
 								"UNKNOWN" : region, clicks),
