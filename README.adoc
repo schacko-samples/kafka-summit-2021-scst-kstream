@@ -40,19 +40,25 @@ This application has two REST endpoints that allow you to publish user-region an
 
 First enter some data for user region.
 
-`curl -X POST localhost:8090/user-region/alice/asia`
+```
+curl -X POST localhost:8090/user-region/alice/asia
+```
 
 At this point, Alice lives in Asia.
 
 Now send some click impression data from Alice.
 
-`curl -X POST localhost:8090/user-clicks/alice/12`
+```
+curl -X POST localhost:8090/user-clicks/alice/12
+```
 
 Watch the console of the `UserClicksPerRegionApplication` and see that the clicks per region information is logged from the test processor.
 
 Invoke the REST endpoint to extract this same information through an interactive query.
 
-`curl localhost:8080/updates/asia`
+```
+curl localhost:8080/updates/asia | jq .
+```
 
 Enter more POST data as above and verify that you see the correct output.
 
