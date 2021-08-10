@@ -56,28 +56,6 @@ Invoke the REST endpoint to extract this same information through an interactive
 
 Enter more POST data as above and verify that you see the correct output.
 
-This application is also enabled with DLQ for records that failed inbound deserialization.
-Let's verify its behavior.
-
-The main processor takes `Long` value for user clicks. If you send any other type of data, the deserialization will fail.
-Send some text data instead of `Long`.
-
-`kafkacat -b localhost:9092 -t user-clicks -P -K:`
-
-See the message on the application console.
-
-You can consume messages on the default DLQ topic created by the application as below:
-
-```
-kafkacat -b localhost:9092 -t error.user-clicks.user-clicks-per-region -f 'Key: %k\nValue:%s\n'
-```
-
-Or
-
-```
-docker exec -it s1p-kafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic error.user-clicks.user-clicks-per-region --property print.key=true --property key.separator="-"
-```
-
 ### Accessing binder health endpoint
 
 ```
